@@ -1,0 +1,18 @@
+<div class="form-group">
+    
+      
+      <form (ngSubmit)="onSubmit()" class="col s6">
+        <h3>Add Item</h3>
+          <div class="input-field col s6">
+            <input  class="form-control" type="text" placeholder="Add Title" [(ngModel)]="item.title" name="title">
+            <label>Title</label>
+          </div>
+          <div class="input-field col s6">
+            <input  class="form-control" type="text" placeholder="Add Description" [(ngModel)]="item.description" name="description">
+            <label>Description</label>
+          </div>
+          <input type="submit" value="Submit" class="btn btn-primary" >
+        
+      </form>
+    
+  </div>

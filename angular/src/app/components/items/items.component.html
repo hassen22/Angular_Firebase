@@ -1,0 +1,26 @@
+<div>
+    <ul *ngFor="let item of items" class="list-group">
+        <li class="list-group-item"><strong>{{item.title}}: </strong> {{item.description}}  
+            <div *ngIf="editState && itemToEdit.id == item.id" class="form-group">
+                <form (ngSubmit)="updateItem(item)">
+                    <div>
+                        <div >
+                        <input type="text" placeholder="Add Title" [(ngModel)]="item.title" name="title" class="form-control" >
+                        </div>
+                    <div>
+                        <input type="text" placeholder="Add Description" [(ngModel)]="item.description" name="description" class="form-control" >
+                    </div>
+                        <input type="submit" value="Update Item" class="btn btn-primary" >
+                    </div>
+                </form>
+                
+            </div>
+            <div>
+                <button *ngIf="!editState" (click)="editItem($event, item)" class="btn btn-success">Update</button>
+                <button *ngIf="!editState" (click)="deleteItem($event, item)" class="btn btn-danger">Delete</button>
+            </div>
+        </li>
+    </ul>
+</div>
+
+ 
